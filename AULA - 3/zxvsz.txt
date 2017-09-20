@@ -1,0 +1,137 @@
+#include <stdio.h>
+
+int tamanho(char[30]);
+int pos(char[30], char[30]);
+void sub(char[30], int, int, char*[30]);
+
+int main(){
+
+    char cadeia[30];
+    char subcadeia[30];
+    int pos_ini;
+    int comp;
+
+    int res;
+
+    printf("O que deseja fazer?\n\n");
+    printf("1 - Tamanho de uma String\n");
+    printf("2 - Tirar uma string de uma String\n");
+    printf("3 - Localizar a posicao em uma String\n");
+    printf("4 - Comparar Strings\n");
+    printf("5 - Copiar Strings\n");
+    printf("6 - Concatenar Strings\n");
+
+    int op;
+    scanf("%i",&op);
+
+    switch (op){
+    case 1:
+        printf("Digite uma string para ver seu tamanho: ");
+        scanf("%s",&cadeia);
+        res = tamanho(cadeia);
+        printf("A String %s tem %i caracteres", cadeia, res);
+        break;
+    case 2:
+        printf("Digite uma string reduzir: ");
+        scanf("%s",&cadeia);
+        printf("Digite a posicao de inicio da substring: ");
+        scanf("%i",&pos_ini);
+        printf("Digite o comprimento da substring: ");
+        scanf("%i",&comp);
+        char* newstring[30];
+        sub(cadeia, pos_ini, comp, &newstring[30]);
+        printf("A substring é %s", newstring);
+        break;
+    case 3:
+        printf("Digite uma string principal: ");
+        scanf("%s",&cadeia);
+        printf("Digite uma string que estará dentro da principal: ");
+        scanf("%s",&subcadeia);
+        res = pos(cadeia, subcadeia);
+        if(res != -1){
+            printf("A string esta na posicao: %i", res);
+        }
+    }
+
+	return 0;
+}
+
+int tamanho(char cadeia[30]){
+    int i;
+
+	i = 0;
+
+	while(cadeia[i] != '\0'){
+		i++;
+    }
+
+	return i;
+}
+
+int pos(char cadeia[30], char subcadeia[30]){
+    int local,i,j,inicio,tamc,tams,achou;
+
+    achou = 0;
+
+    tamc = tamanho(cadeia);
+    tams = tamanho(subcadeia);
+
+    if(tamc >= tams){
+        inicio = 0;
+        while(tamc >= tams && achou == 0){
+            i = 0;
+            j = inicio;
+            if(subcadeia[i]=cadeia[j]){
+                local = j;
+                i++;
+                j++;
+                while(i<tams && subcadeia[i]==cadeia[j]){
+                    i++;
+                    j++;
+                }
+                if(i<tams){
+                    inicio++;
+                    tamc--;
+                }else{
+                    achou = 1;
+                }
+            }else{
+                inicio++;
+                tamc--;
+            }
+        }
+    }else{
+        printf("A subcadeia tem tamanho Maior que a cadeia!");
+    }
+
+    if(achou=0){
+        local=-1;
+    }
+    return local;
+}
+
+
+void sub(char cadeia[30],int pos_ini, int comp, char* subcadeia[30]){
+    int i, tam, cont;
+
+    tam = tamanho(cadeia);
+
+    if(pos_ini > tam-1 || pos_ini < 0){
+        printf("Posicao inicial invalida!");
+        *subcadeia[0] = '\0';
+    }else{
+        if(comp > tam || comp < 0){
+            printf("Comprimento invalido!");
+            *subcadeia[0] = '\0';
+        }else{
+            i = pos_ini;
+            cont = 0;
+            while(i < tam && cont < comp){
+                *subcadeia[cont] = cadeia[i];
+                cont++;
+                i++;
+            }
+            *subcadeia[cont] = '\0';
+        }
+    }
+}

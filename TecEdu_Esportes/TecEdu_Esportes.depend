@@ -1,0 +1,55 @@
+# depslib dependency file v1.0
+1412646704 source:c:\users\marcela\desktop\fai\faitec\tec edu\programa\tec-edu-esportes.c
+	<allegro5/allegro.h>
+	<allegro5/allegro_image.h>
+	<allegro5/allegro_audio.h>
+	<allegro5/allegro_acodec.h>
+	<allegro5/allegro_primitives.h>
+	<time.h>
+
+1414066983 source:c:\programa tecedu esportes\tec edu\programa\tec-edu-esportes.c
+	<allegro5/allegro.h>
+	<allegro5/allegro_image.h>
+	<allegro5/allegro_audio.h>
+	<allegro5/allegro_acodec.h>
+	<allegro5/allegro_primitives.h>
+	<time.h>
+	<stdio.h>
+	<stdbool.h>
+
+1414066984 source:g:\programa\tec-edu-esportes.c
+	<allegro5/allegro.h>
+	<allegro5/allegro_image.h>
+	<allegro5/allegro_audio.h>
+	<allegro5/allegro_acodec.h>
+	<allegro5/allegro_primitives.h>
+	<time.h>
+	<stdio.h>
+	<stdbool.h>
+
+1416168510 source:c:\users\marcela\desktop\tecedu_esportes\tec-edu-esportes.c
+	<allegro5/allegro.h>
+	<allegro5/allegro_image.h>
+	<allegro5/allegro_audio.h>
+	<allegro5/allegro_acodec.h>
+	<allegro5/allegro_primitives.h>
+	<allegro5/allegro_font.h>
+	<allegro5/allegro_ttf.h>
+	<time.h>
+	<stdio.h>
+	<stdbool.h>
+	<string.h>
+
+1416168573 source:d:\fai - 1.ano\tecedu_esportes\tec-edu-esportes.c
+	<allegro5/allegro.h>
+	<allegro5/allegro_image.h>
+	<allegro5/allegro_audio.h>
+	<allegro5/allegro_acodec.h>
+	<allegro5/allegro_primitives.h>
+	<allegro5/allegro_font.h>
+	<allegro5/allegro_ttf.h>
+	<time.h>
+	<stdio.h>
+	<stdbool.h>
+	<string.h>
+
